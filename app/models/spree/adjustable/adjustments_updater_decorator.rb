@@ -5,7 +5,7 @@ Spree::Adjustable::AdjustmentsUpdater.class_eval do
       super
 
       handling_total = 0
-      handling_total = @adjustable.adjusters.handling.reload.map(&:update!).compact.sum
+      handling_total = @adjustable.adjustments.handling.reload.map(&:update!).compact.sum
 
       @adjustable.update_columns(
         handling_total: handling_total,
