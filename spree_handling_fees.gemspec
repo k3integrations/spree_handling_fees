@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_handling_fees'
-  s.version     = '3.1.0'
+  s.version     = '3.1.1'
   s.summary     = 'Adds handling fee functionality to Spree'
   s.description = 'Adds handling fee functionality to Spree'
   s.required_ruby_version = '>= 2.0.0'

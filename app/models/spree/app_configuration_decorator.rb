@@ -1,5 +1,9 @@
 Spree::AppConfiguration.class_eval do
-  Rails.application.config.spree.calculators.add_class('stock_locations')
+  calculators = Rails.application.config.spree.calculators
+  unless calculators.respond_to?(:stock_locations)
+    calculators.singleton_class.class_eval { attr_accessor :stock_locations }
+  end
+  calculators.stock_locations ||= []
   Rails.application.config.spree.calculators.stock_locations = [
     Spree::Calculator::Shipping::FlatPercentItemTotal,
     Spree::Calculator::Shipping::FlatRate,
